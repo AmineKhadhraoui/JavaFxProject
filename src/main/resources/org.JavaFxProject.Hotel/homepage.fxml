@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.layout.HBox?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #DDDDDD;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.JavaFxProject.Hotel.Controllers.HomePageController">
+    <children>
+        <AnchorPane layoutY="-1.0" prefHeight="125.0" prefWidth="1000.0" style="-fx-background-color: #2c2c2c;">
+            <children>
+                <Label layoutX="27.0" layoutY="39.0" text="HOTEL" textFill="WHITE">     <font>         <Font name="System Bold" size="32.0" />     </font> </Label> <Label layoutX="137.0" layoutY="39.0" text="MANAGEMENT SYSTEM" textFill="WHITE">     <font>         <Font name="System Bold" size="32.0" />     </font> </Label>
+                <ImageView fx:id="logout" fitHeight="60.0" fitWidth="60.0" layoutX="904.0" layoutY="33.0" onMouseClicked="#handleLogout" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@res/icons8-logout-60.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutY="124.0" prefHeight="149.0" prefWidth="280.0" style="-fx-background-color: #ffffff;">
+            <children>
+                <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="21.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@res/usericon.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="adminName" layoutX="122.0" layoutY="40.0" text="Admin" textFill="#2c2c2c">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <Circle fill="#26ff00" layoutX="128.0" layoutY="98.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                <Label layoutX="140.0" layoutY="88.0" text="Online" textFill="#2c2c2c">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutY="274.0" prefHeight="550.0" prefWidth="280.0" style="-fx-background-color: #ffffff;">
+            <children>
+                <Button fx:id="dash" alignment="BASELINE_LEFT" layoutY="10.0" mnemonicParsing="false" onAction="#createDash" prefHeight="60.0" prefWidth="280.0" style="-fx-background-color: #ffffff; -fx-text-fill: #2c2c2c;" text="          Dashboard">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+                <Button fx:id="room" alignment="BASELINE_LEFT" layoutY="80.0" mnemonicParsing="false" onAction="#createRoom" prefHeight="60.0" prefWidth="280.0" style="-fx-background-color: #ffffff; -fx-text-fill: #2c2c2c;" text="         Room Management">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+                <Button fx:id="checkin" alignment="BASELINE_LEFT" layoutY="150.0" mnemonicParsing="false" onAction="#createCheckIn" prefHeight="60.0" prefWidth="280.0" style="-fx-background-color: #ffffff; -fx-text-fill: #2c2c2c;" text="         Customer Check In">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+                <Button fx:id="checkout" alignment="BASELINE_LEFT" layoutY="220.0" mnemonicParsing="false" onAction="#createCheckOut" prefHeight="60.0" prefWidth="280.0" style="-fx-background-color: #ffffff; -fx-text-fill: #2c2c2c;" text="         Customer Check Out">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+                <Button fx:id="bill" alignment="BASELINE_LEFT" layoutY="290.0" mnemonicParsing="false" onAction="#createCustomerBill" prefHeight="60.0" prefWidth="280.0" style="-fx-background-color: #ffffff; -fx-text-fill: #2c2c2c;" text="         Customer Bill">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+                <Button fx:id="events" alignment="BASELINE_LEFT" layoutY="360.0" mnemonicParsing="false" onAction="#createEvents" prefHeight="60.0" prefWidth="280.0" style="-fx-background-color: #ffffff; -fx-text-fill: #2c2c2c;" text="         Events">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+                <Button fx:id="staff" alignment="BASELINE_LEFT" layoutY="430.0" mnemonicParsing="false" onAction="#createStaff" prefHeight="60.0" prefWidth="280.0" style="-fx-background-color: #ffffff; -fx-text-fill: #2c2c2c;" text="         Staff">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+                <Button fx:id="services" alignment="BASELINE_LEFT" layoutY="500.0" mnemonicParsing="false" onAction="#createServices" prefHeight="60.0" prefWidth="280.0" style="-fx-background-color: #ffffff; -fx-text-fill: #2c2c2c;" text="         Services">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="holdPane" layoutX="280.0" layoutY="124.0" prefHeight="675.0" prefWidth="720.0" />
+    </children>
+</AnchorPane>
