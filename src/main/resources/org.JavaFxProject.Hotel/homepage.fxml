@@ -43,42 +43,42 @@
         </AnchorPane>
         <AnchorPane layoutY="274.0" prefHeight="550.0" prefWidth="280.0" style="-fx-background-color: #ffffff;">
             <children>
-                <Button fx:id="dash" alignment="BASELINE_LEFT" layoutY="10.0" mnemonicParsing="false" onAction="#createDash" prefHeight="60.0" prefWidth="280.0" style="-fx-background-color: #ffffff; -fx-text-fill: #2c2c2c;" text="          Dashboard">
+                <Button fx:id="dash" alignment="BASELINE_LEFT" layoutY="10.0" mnemonicParsing="false" onAction="#createDash" prefHeight="37.0" prefWidth="280.0" style="-fx-background-color: #ffffff; -fx-text-fill: #2c2c2c;" text="          Dashboard">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Button>
-                <Button fx:id="room" alignment="BASELINE_LEFT" layoutY="80.0" mnemonicParsing="false" onAction="#createRoom" prefHeight="60.0" prefWidth="280.0" style="-fx-background-color: #ffffff; -fx-text-fill: #2c2c2c;" text="         Room Management">
+                <Button fx:id="room" alignment="BASELINE_LEFT" layoutY="80.0" mnemonicParsing="false" onAction="#createRoom" prefHeight="37.0" prefWidth="280.0" style="-fx-background-color: #ffffff; -fx-text-fill: #2c2c2c;" text="         Room Management">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Button>
-                <Button fx:id="checkin" alignment="BASELINE_LEFT" layoutY="150.0" mnemonicParsing="false" onAction="#createCheckIn" prefHeight="60.0" prefWidth="280.0" style="-fx-background-color: #ffffff; -fx-text-fill: #2c2c2c;" text="         Customer Check In">
+                <Button fx:id="checkin" alignment="BASELINE_LEFT" layoutY="150.0" mnemonicParsing="false" onAction="#createCheckIn" prefHeight="37.0" prefWidth="280.0" style="-fx-background-color: #ffffff; -fx-text-fill: #2c2c2c;" text="         Customer Check In">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Button>
-                <Button fx:id="checkout" alignment="BASELINE_LEFT" layoutY="220.0" mnemonicParsing="false" onAction="#createCheckOut" prefHeight="60.0" prefWidth="280.0" style="-fx-background-color: #ffffff; -fx-text-fill: #2c2c2c;" text="         Customer Check Out">
+                <Button fx:id="checkout" alignment="BASELINE_LEFT" layoutY="220.0" mnemonicParsing="false" onAction="#createCheckOut" prefHeight="37.0" prefWidth="280.0" style="-fx-background-color: #ffffff; -fx-text-fill: #2c2c2c;" text="         Customer Check Out">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Button>
-                <Button fx:id="bill" alignment="BASELINE_LEFT" layoutY="290.0" mnemonicParsing="false" onAction="#createCustomerBill" prefHeight="60.0" prefWidth="280.0" style="-fx-background-color: #ffffff; -fx-text-fill: #2c2c2c;" text="         Customer Bill">
+                <Button fx:id="bill" alignment="BASELINE_LEFT" layoutY="290.0" mnemonicParsing="false" onAction="#createCustomerBill" prefHeight="37.0" prefWidth="280.0" style="-fx-background-color: #ffffff; -fx-text-fill: #2c2c2c;" text="         Customer Bill">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Button>
-                <Button fx:id="events" alignment="BASELINE_LEFT" layoutY="360.0" mnemonicParsing="false" onAction="#createEvents" prefHeight="60.0" prefWidth="280.0" style="-fx-background-color: #ffffff; -fx-text-fill: #2c2c2c;" text="         Events">
+                <Button fx:id="events" alignment="BASELINE_LEFT" layoutY="360.0" mnemonicParsing="false" onAction="#createEvents" prefHeight="37.0" prefWidth="280.0" style="-fx-background-color: #ffffff; -fx-text-fill: #2c2c2c;" text="         Events">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Button>
-                <Button fx:id="staff" alignment="BASELINE_LEFT" layoutY="430.0" mnemonicParsing="false" onAction="#createStaff" prefHeight="60.0" prefWidth="280.0" style="-fx-background-color: #ffffff; -fx-text-fill: #2c2c2c;" text="         Staff">
+                <Button fx:id="staff" alignment="BASELINE_LEFT" layoutY="430.0" mnemonicParsing="false" onAction="#createStaff" prefHeight="37.0" prefWidth="280.0" style="-fx-background-color: #ffffff; -fx-text-fill: #2c2c2c;" text="         Staff">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Button>
-                <Button fx:id="services" alignment="BASELINE_LEFT" layoutY="500.0" mnemonicParsing="false" onAction="#createServices" prefHeight="60.0" prefWidth="280.0" style="-fx-background-color: #ffffff; -fx-text-fill: #2c2c2c;" text="         Services">
+                <Button fx:id="services" alignment="BASELINE_LEFT" layoutY="480.0" mnemonicParsing="false" onAction="#createServices" prefHeight="37.0" prefWidth="280.0" style="-fx-background-color: #ffffff; -fx-text-fill: #2c2c2c;" text="         Services">
                     <font>
                         <Font size="18.0" />
                     </font>
