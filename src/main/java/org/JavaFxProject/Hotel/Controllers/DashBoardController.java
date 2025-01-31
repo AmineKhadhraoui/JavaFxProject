@@ -10,7 +10,7 @@ import java.util.ResourceBundle;
 public class DashBoardController implements Initializable {
     @FXML
     private Label avaRoom;
-//comment
+//comment 1
     @FXML
     private Label bookedRoom;
 
