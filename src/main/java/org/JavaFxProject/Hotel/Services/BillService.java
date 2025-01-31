@@ -1,14 +1,21 @@
 package org.JavaFxProject.Hotel.Services;
 
+<<<<<<< Updated upstream
 import org.JavaFxProject.Hotel.Entities.Bill;
+=======
+import org.JavaFxProject.Hotel.Entities.Reservation;
+>>>>>>> Stashed changes
 import org.JavaFxProject.Hotel.Utils.DBConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+<<<<<<< Updated upstream
 import java.util.ArrayList;
 import java.util.List;
+=======
+>>>>>>> Stashed changes
 
 public class BillService {
     private Connection connection;
@@ -19,6 +26,7 @@ public class BillService {
         connection = dbConnection.getConnection();
     }
 
+<<<<<<< Updated upstream
     public List<Bill> getAllBills() {
         List<Bill> billList = new ArrayList<>();
         String query = "SELECT b.*, res.roomNumber, res.customerIDNumber, c.customerName FROM bills b " +
@@ -58,11 +66,101 @@ public class BillService {
                 int amount = rs.getInt("billAmount");
                 int roomNumber = rs.getInt("roomNumber");
                 billList.add(new Bill(billID, customerName, customerID, billDate, amount, roomNumber));
+=======
+    public Reservation getReservationDetails(int resID) {
+        String query = "SELECT res.reservationID, res.roomNumber, c.customerIDNumber, c.customerName, (r.price * DATEDIFF(res.checkOutDate, res.checkInDate)) AS totalPrice " +
+                "FROM customers c INNER JOIN reservations res ON c.customerIDNumber = res.customerIDNumber " +
+                "INNER JOIN rooms r ON r.roomNumber = res.roomNumber WHERE res.reservationID=?";
+        try (PreparedStatement pst = connection.prepareStatement(query)) {
+            pst.setInt(1, resID);
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+                return new Reservation(
+                        rs.getInt("reservationID"),
+                        rs.getInt("roomNumber"),
+                        rs.getInt("customerIDNumber"),
+                        rs.getString("checkInDate"),
+                        rs.getString("checkOutDate"),
+                        rs.getDouble("totalPrice"),
+                        rs.getString("status"),
+                        rs.getString("customerName")
+                );
+>>>>>>> Stashed changes
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+<<<<<<< Updated upstream
         return billList;
     }
 }
 
+=======
+        return null;
+    }
+
+    public void createBill(int resID, String billDate, double billAmount) {
+        String query = "INSERT INTO bills(reservationID, billDate, billAmount) VALUES (?, ?, ?)";
+        try (PreparedStatement pst = connection.prepareStatement(query)) {
+            pst.setInt(1, resID);
+            pst.setString(2, billDate);
+            pst.setDouble(3, billAmount);
+            pst.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void updateRoomStatus(int roomNumber) {
+        String query = "UPDATE rooms SET status='Not Booked' WHERE roomNumber=?";
+        try (PreparedStatement pst = connection.prepareStatement(query)) {
+            pst.setInt(1, roomNumber);
+            pst.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void updateReservationStatus(int resID) {
+        String query = "UPDATE reservations SET status='Checked Out' WHERE reservationID=?";
+        try (PreparedStatement pst = connection.prepareStatement(query)) {
+            pst.setInt(1, resID);
+            pst.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public String getBillDetails(int billID) {
+        String query = "SELECT b.billID, c.customerIDNumber, c.customerName, c.customerPhoneNo, r.roomNumber, r.roomType, r.price, res.checkInDate, res.checkOutDate, " +
+                "(r.price * DATEDIFF(res.checkOutDate, res.checkInDate)) AS totalPrice, DATEDIFF(res.checkOutDate, res.checkInDate) AS totalDay " +
+                "FROM bills b INNER JOIN reservations res ON b.reservationID = res.reservationID " +
+                "INNER JOIN rooms r ON r.roomNumber = res.roomNumber " +
+                "INNER JOIN customers c ON c.customerIDNumber = res.customerIDNumber " +
+                "WHERE b.billID=?";
+        try (PreparedStatement pst = connection.prepareStatement(query)) {
+            pst.setInt(1, billID);
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+                return String.format(
+                        "Bill ID: %s\nCustomer Details:\nName: %s\nID Number: %s\nMobile Number: %s\n\nRoom Details:\nRoom Number: %s\nRoom Type: %s\nPrice Per Day: %s\n\nCheck In Date: %s\nCheck Out Date: %s\nNumber of Days Stay: %s\nTotal Amount Paid: %s",
+                        rs.getString("billID"),
+                        rs.getString("customerName"),
+                        rs.getString("customerIDNumber"),
+                        rs.getString("customerPhoneNo"),
+                        rs.getString("roomNumber"),
+                        rs.getString("roomType"),
+                        rs.getString("price"),
+                        rs.getString("checkInDate"),
+                        rs.getString("checkOutDate"),
+                        rs.getString("totalDay"),
+                        rs.getString("totalPrice")
+                );
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+}
+>>>>>>> Stashed changes
