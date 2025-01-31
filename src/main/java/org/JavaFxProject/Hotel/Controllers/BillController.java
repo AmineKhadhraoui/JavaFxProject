@@ -1,7 +1,6 @@
 package org.JavaFxProject.Hotel.Controllers;
 
 import org.JavaFxProject.Hotel.Entities.Bill;
-import org.JavaFxProject.Hotel.Services.BillService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -12,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import org.JavaFxProject.Hotel.Services.BillService;
 
 import java.awt.*;
 import java.io.File;
