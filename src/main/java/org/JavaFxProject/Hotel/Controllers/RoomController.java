@@ -68,7 +68,7 @@ public class RoomController implements Initializable {
     @FXML
     public void handleAddAction(javafx.event.ActionEvent actionEvent) throws IOException {
         Stage add = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/org.JavaFxProject.Hotel/addroom.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/org.JavaFxProject.Hotel/Addroom.fxml"));
         Scene scene = new Scene(root);
         add.setScene(scene);
         add.show();
@@ -79,9 +79,9 @@ public class RoomController implements Initializable {
         if (event.getClickCount() == 2) {
             Room selectedRoom = roomTable.getSelectionModel().getSelectedItem();
             if (selectedRoom != null && selectedRoom.getStatus().equals("Booked")) {
-               // CustomerController.setSelectedRoomNumber(selectedRoom.getNumber());
+                CustomerController.setSelectedRoomNumber(selectedRoom.getNumber());
                 Stage add = new Stage();
-                Parent root = FXMLLoader.load(getClass().getResource("customerinfo.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/org.JavaFxProject.Hotel/customerinfo.fxml"));
                 Scene scene = new Scene(root);
                 add.setScene(scene);
                 add.show();

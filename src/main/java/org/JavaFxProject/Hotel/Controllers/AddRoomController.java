@@ -24,11 +24,11 @@ import java.util.ResourceBundle;
         @FXML
         private TextField type;
 
-      //  private RoomService roomService;
+        private RoomService roomService;
 
         @Override
         public void initialize(URL url, ResourceBundle resourceBundle) {
-         //   roomService = new RoomService();
+            roomService = new RoomService();
         }
 
         @FXML
@@ -36,8 +36,8 @@ import java.util.ResourceBundle;
             int roomNumber = Integer.parseInt(number.getText());
             int roomPrice = Integer.parseInt(price.getText());
             String roomType = type.getText();
-         //   Room newRoom = new Room(roomNumber, roomPrice, roomType, "Not Booked");
-          //  roomService.addRoom(newRoom);
+            Room newRoom = new Room(roomNumber, roomPrice, roomType, "Not Booked");
+            roomService.addRoom(newRoom);
         }
     }
 

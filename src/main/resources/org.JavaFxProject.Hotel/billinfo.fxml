@@ -8,17 +8,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #2D3347;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller=" org.JavaFxProject.Hotel.BillInfoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #DDDDDD;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.JavaFxProject.Hotel.Controllers.BillInfoController">
     <children>
-        <Label layoutX="226.0" layoutY="34.0" text="Bill" textFill="#2196f3">
+        <Label layoutX="226.0" layoutY="34.0" text="Bill" textFill="#2c2c2c">
             <font>
                 <Font name="System Bold" size="30.0" />
             </font>
         </Label>
-        <TextField fx:id="roomNumber" layoutX="180.0" layoutY="115.0" prefHeight="25.0" prefWidth="250.0" promptText="Room Number" />
-        <TextField fx:id="customerName" layoutX="180.0" layoutY="185.0" prefHeight="25.0" prefWidth="250.0" promptText="Customer Name" />
-        <TextField fx:id="Amount" layoutX="180.0" layoutY="325.0" prefHeight="25.0" prefWidth="250.0" promptText="Amount" />
-        <Button fx:id="print" layoutX="270.0" layoutY="390.0" mnemonicParsing="false" onAction="#handlePrintAction" style="-fx-background-color: #2196f3;" text="Print Bill" textFill="WHITE" />
+        <TextField fx:id="roomNumber" layoutX="180.0" layoutY="115.0" prefHeight="25.0" prefWidth="250.0" promptText="Room Number" style="-fx-focus-color: #2c2c2c; -fx-faint-focus-color: transparent;" />
+        <TextField fx:id="customerName" layoutX="180.0" layoutY="185.0" prefHeight="25.0" prefWidth="250.0" promptText="Customer Name" style="-fx-focus-color: #2c2c2c; -fx-faint-focus-color: transparent;" />
+        <TextField fx:id="Amount" layoutX="180.0" layoutY="325.0" prefHeight="25.0" prefWidth="250.0" promptText="Amount" style="-fx-focus-color: #2c2c2c; -fx-faint-focus-color: transparent;" />
+        <Button fx:id="print" layoutX="270.0" layoutY="390.0" mnemonicParsing="false" onAction="#handlePrintAction" style="-fx-background-color: #2c2c2c;" text="Print Bill" textFill="WHITE" />
         <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="144.0" layoutY="186.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@res/icons8-user-24.png" />
@@ -34,12 +34,12 @@
                 <Image url="@res/icons8-numbers-input-form-24.png" />
             </image>
         </ImageView>
-        <Label layoutX="278.0" layoutY="34.0" text="Details" textFill="WHITE">
+        <Label layoutX="278.0" layoutY="34.0" text="Details" textFill="#2c2c2c">
             <font>
                 <Font name="System Bold" size="30.0" />
             </font>
         </Label>
-        <TextField fx:id="customerIDNumber" layoutX="180.0" layoutY="255.0" prefHeight="25.0" prefWidth="250.0" promptText="Customer ID Number" />
+        <TextField fx:id="customerIDNumber" layoutX="180.0" layoutY="255.0" prefHeight="25.0" prefWidth="250.0" promptText="Customer ID Number" style="-fx-focus-color: #2c2c2c; -fx-faint-focus-color: transparent;" />
         <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="144.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@res/icons8-bed-24.png" />

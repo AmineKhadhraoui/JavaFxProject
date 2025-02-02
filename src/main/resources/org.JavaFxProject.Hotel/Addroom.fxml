@@ -8,17 +8,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: #2D3347;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller=" org.JavaFxProject.Hotel.AddRoomController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="450.0" style="-fx-background-color: #DDDDDD;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.JavaFxProject.Hotel.Controllers.AddRoomController">
     <children>
-        <Label layoutX="114.0" layoutY="80.0" text="Add" textFill="#2196f3">
+        <Label layoutX="114.0" layoutY="80.0" text="Add" textFill="#2c2c2c">
             <font>
                 <Font name="System Bold" size="30.0" />
             </font>
         </Label>
-        <TextField fx:id="number" layoutX="108.0" layoutY="200.0" prefHeight="25.0" prefWidth="250.0" promptText="Room Number" />
-        <TextField fx:id="type" layoutX="108.0" layoutY="300.0" prefHeight="25.0" prefWidth="250.0" promptText="Room Type" />
-        <TextField fx:id="price" layoutX="108.0" layoutY="400.0" prefHeight="25.0" prefWidth="250.0" promptText="Price" />
-        <Button fx:id="add" layoutX="189.0" layoutY="500.0" mnemonicParsing="false" onAction="#handleAddAction" style="-fx-background-color: #2196f3;" text="Add Room" textFill="WHITE" />
+        <TextField fx:id="number" layoutX="108.0" layoutY="200.0" prefHeight="25.0" prefWidth="250.0" promptText="Room Number" style="-fx-focus-color: #2c2c2c; -fx-faint-focus-color: transparent;" />
+        <TextField fx:id="type" layoutX="108.0" layoutY="300.0" prefHeight="25.0" prefWidth="250.0" promptText="Room Type" style="-fx-focus-color: #2c2c2c; -fx-faint-focus-color: transparent;" />
+        <TextField fx:id="price" layoutX="108.0" layoutY="400.0" prefHeight="25.0" prefWidth="250.0" promptText="Price" style="-fx-focus-color: #2c2c2c; -fx-faint-focus-color: transparent;" />
+        <Button fx:id="add" layoutX="189.0" layoutY="500.0" mnemonicParsing="false" onAction="#handleAddAction" style="-fx-background-color: #2c2c2c;" text="Add Room" textFill="WHITE" />
         <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="72.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@res/icons8-bed-24.png" />
@@ -34,7 +34,7 @@
                 <Image url="@res/icons8-numbers-input-form-24.png" />
             </image>
         </ImageView>
-        <Label layoutX="181.0" layoutY="80.0" text="New Room" textFill="WHITE">
+        <Label layoutX="181.0" layoutY="80.0" text="New Room" textFill="#2c2c2c">
             <font>
                 <Font name="System Bold" size="30.0" />
             </font>

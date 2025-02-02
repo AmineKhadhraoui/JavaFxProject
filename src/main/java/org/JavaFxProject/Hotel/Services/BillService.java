@@ -23,12 +23,19 @@ public class BillService {
     }
 
     public Reservation getReservationDetails(int resID) {
-        String query = "SELECT res.reservationID, res.roomNumber, c.customerIDNumber, c.customerName, (r.price * DATEDIFF(res.checkOutDate, res.checkInDate)) AS totalPrice " +
-                "FROM customers c INNER JOIN reservations res ON c.customerIDNumber = res.customerIDNumber " +
-                "INNER JOIN rooms r ON r.roomNumber = res.roomNumber WHERE res.reservationID=?";
+        String query = "SELECT res.reservationID, res.roomNumber, c.customerIDNumber, c.customerName, " +
+                "res.checkInDate, res.checkOutDate, res.status, " +
+                "DATEDIFF(res.checkOutDate, res.checkInDate) AS totalDays, " +
+                "(r.price * DATEDIFF(res.checkOutDate, res.checkInDate)) AS totalPrice " +
+                "FROM customers c " +
+                "INNER JOIN reservations res ON c.customerIDNumber = res.customerIDNumber " +
+                "INNER JOIN rooms r ON r.roomNumber = res.roomNumber " +
+                "WHERE res.reservationID=?";
+
         try (PreparedStatement pst = connection.prepareStatement(query)) {
             pst.setInt(1, resID);
             ResultSet rs = pst.executeQuery();
+
             if (rs.next()) {
                 return new Reservation(
                         rs.getInt("reservationID"),
@@ -36,9 +43,10 @@ public class BillService {
                         rs.getInt("customerIDNumber"),
                         rs.getString("checkInDate"),
                         rs.getString("checkOutDate"),
+                        rs.getInt("totalDays"),
                         rs.getDouble("totalPrice"),
                         rs.getString("status"),
-                                rs.getString("customerName")
+                        rs.getString("customerName")
                 );
             }
         } catch (SQLException e) {

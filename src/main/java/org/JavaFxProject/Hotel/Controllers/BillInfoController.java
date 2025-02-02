@@ -29,6 +29,13 @@ public class BillInfoController implements Initializable {
     private TextField roomNumber;
 
     private BillService billService;
+    public static void setSelectedReservationID(int selectedReservationID) {
+        selectedResID = selectedReservationID;
+    }
+
+    public static void setSelectedReservation(Reservation reservation) {
+        selectedReservation = reservation;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -63,7 +70,7 @@ public class BillInfoController implements Initializable {
     }
 
     private void createBill(String billDetails, int billID) throws IOException {
-        String path = "C:\\Users\\Mr.Cuong\\IdeaProjects\\HotelManagement\\res\\";
+        String path = "D:\\Bills\\";
         try (FileOutputStream fos = new FileOutputStream(path + "bill" + billID + ".pdf")) {
             fos.write(billDetails.getBytes());
         }
