@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.JavaFxProject.Hotel.Controllers.StaffController">
+    <VBox spacing="10">
+        <TableView fx:id="staffTable">
+            <columns>
+                <TableColumn fx:id="colStaffID" text="ID"/>
+                <TableColumn fx:id="colName" text="Name"/>
+                <TableColumn fx:id="colAge" text="Age"/>
+                <TableColumn fx:id="colGender" text="Gender"/>
+                <TableColumn fx:id="colPosition" text="Position"/>
+                <TableColumn fx:id="colPhone" text="Phone"/>
+                <TableColumn fx:id="colEmail" text="Email"/>
+            </columns>
+        </TableView>
+
+        <HBox spacing="10" alignment="CENTER">
+            <TextField fx:id="txtName" promptText="Name" prefWidth="100"/>
+            <TextField fx:id="txtAge" promptText="Age" prefWidth="50"/>
+            <TextField fx:id="txtGender" promptText="Gender" prefWidth="80"/>
+            <TextField fx:id="txtPosition" promptText="Position" prefWidth="100"/>
+            <TextField fx:id="txtPhone" promptText="Phone" prefWidth="120"/>
+            <TextField fx:id="txtEmail" promptText="Email" prefWidth="150"/>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button fx:id="btnAdd" text="Add" onAction="#addStaff"/>
+            <Button fx:id="btnUpdate" text="Update" onAction="#updateStaff"/>
+            <Button fx:id="btnDelete" text="Delete" onAction="#deleteStaff"/>
+        </HBox>
+    </VBox>
+</AnchorPane>
