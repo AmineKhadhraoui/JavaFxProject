@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="675.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.JavaFxProject.Hotel.Controllers.ServiceController">
+    <children>
+        <AnchorPane layoutX="15.0" layoutY="8.0" prefHeight="85.0" prefWidth="690.0" style="-fx-background-color: #ffffff;">
+            <children>
+                <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="14.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+
+                    </image>
+                </ImageView>
+                <Label layoutX="56.0" layoutY="25.0" text="Manage Services">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="15.0" layoutY="95.0" prefHeight="570.0" prefWidth="690.0" style="-fx-background-color: #ffffff;">
+            <children>
+                <TextField fx:id="search" layoutX="61.0" layoutY="23.0" onKeyReleased="#handleSearchKey" prefHeight="25.0" prefWidth="212.0" promptText="Type Service Name" />
+                <Button fx:id="add" layoutX="589.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleAddAction" text="Add Service" />
+                <Button fx:id="edit" layoutX="400.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleEditAction" text="Edit Service" />
+                <Button fx:id="delete" layoutX="489.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleDeleteAction" text="Delete Service" />
+                <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="28.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@res/icons8-search-32.png" />
+                    </image>
+                </ImageView>
+                <TableView fx:id="serviceTable" layoutX="28.0" layoutY="70.0" onMouseClicked="#clickItem" prefHeight="470.0" prefWidth="634.0">
+                    <columns>
+                        <TableColumn fx:id="serviceID" prefWidth="165.0" text="Service ID" />
+                        <TableColumn fx:id="serviceName" prefWidth="165.0" text="Service Name" />
+                        <TableColumn fx:id="serviceDescription" prefWidth="149.0" text="Description" />
+                        <TableColumn fx:id="servicePrice" minWidth="4.0" prefWidth="153.0" text="Price" />
+                    </columns>
+                </TableView>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
