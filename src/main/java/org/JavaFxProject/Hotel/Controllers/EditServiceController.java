@@ -17,7 +17,7 @@ public class EditServiceController {
     private TextField servicePrice;
 
     private ServiceService serviceService;
-
+// edit
     @FXML
     public void initialize() {
         serviceService = new ServiceService();

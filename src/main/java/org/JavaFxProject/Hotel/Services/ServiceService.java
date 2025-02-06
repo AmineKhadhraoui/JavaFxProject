@@ -45,7 +45,7 @@ public class ServiceService {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
+    }//comment
     public List<Services> searchServiceByID(int serviceID) {
         List<Services> serviceList = new ArrayList<>();
         String query = "SELECT * FROM services WHERE serviceID = ?";
