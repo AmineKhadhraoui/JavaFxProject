@@ -1,6 +1,7 @@
 package org.JavaFxProject.Hotel.Services;
 import org.JavaFxProject.Hotel.Entities.Customer;
 import org.JavaFxProject.Hotel.Utils.DBConnection;
+import org.JavaFxProject.Hotel.Utils.EmailUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -94,6 +95,17 @@ public class CheckInService {
             }
 
             connection.commit();
+
+            // Send email to customer
+            String subject = "Check-In Confirmation";
+            String body = "Dear " + customer.getCustomerName() + ",\n\n"
+                    + "Your check-in has been confirmed.\n"
+                    + "Room Number: " + roomNumber + "\n"
+                    + "Check-In Date: " + checkInDate + "\n"
+                    + "Check-Out Date: " + checkOutDate + "\n\n"
+                    + "Thank you for choosing our hotel!";
+            EmailUtil.sendEmail(customer.getCustomerEmail(), subject, body);
+
             return true;
         } catch (SQLException e) {
             try {
