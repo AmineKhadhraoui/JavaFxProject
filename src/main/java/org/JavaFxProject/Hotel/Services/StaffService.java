@@ -77,5 +77,27 @@ public class StaffService {
         }
         return staffList;
     }
-}
 
+    public List<Staff> searchStaffByName(String name) {
+        List<Staff> searchResults = new ArrayList<>();
+        String query = "SELECT * FROM staff WHERE name LIKE ?";
+        try (PreparedStatement pst = connection.prepareStatement(query)) {
+            pst.setString(1, "%" + name + "%");
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                searchResults.add(new Staff(
+                        rs.getInt("staffID"),
+                        rs.getString("name"),
+                        rs.getInt("age"),
+                        rs.getString("gender"),
+                        rs.getString("position"),
+                        rs.getString("phone"),
+                        rs.getString("email")
+                ));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return searchResults;
+    }
+}
