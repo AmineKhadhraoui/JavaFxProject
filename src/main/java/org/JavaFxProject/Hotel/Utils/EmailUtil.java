@@ -8,7 +8,7 @@ import java.util.Properties;
 public class EmailUtil {
 
     private static final String FROM_EMAIL = "hotelbooking2050@gmail.com"; // Replace with your email
-    private static final String EMAIL_PASSWORD = "seai yrmr mhgs qvko"; // Replace with your email password
+    private static final String EMAIL_PASSWORD = "bxem taje chie agcw"; // Replace with your email password
 
     public static void sendEmail(String toEmail, String subject, String body) {
         Properties properties = new Properties();
