@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="500.0"
+            xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.JavaFxProject.Hotel.Controllers.EditEventController">
+
+    <children>
+        <!-- Event ID (non modifiable) -->
+        <Label layoutX="37.0" layoutY="38.0" text="Event ID" />
+        <TextField fx:id="eventID" layoutX="127.0" layoutY="38.0" editable="false" />
+
+        <!-- Event Name -->
+        <Label layoutX="37.0" layoutY="78.0" text="Name" />
+        <TextField fx:id="eventName" layoutX="127.0" layoutY="78.0" />
+
+        <!-- Event Date (String ou utilisez un DatePicker si vous préférez) -->
+        <Label layoutX="37.0" layoutY="118.0" text="Date" />
+        <TextField fx:id="eventDate" layoutX="127.0" layoutY="118.0" />
+
+        <!-- Event Description -->
+        <Label layoutX="37.0" layoutY="158.0" text="Description" />
+        <TextField fx:id="eventDescription" layoutX="127.0" layoutY="158.0" />
+
+        <!-- Bouton "Save" -->
+        <Button fx:id="saveButton" layoutX="127.0" layoutY="218.0"
+                onAction="#handleSaveAction" text="Save" />
+    </children>
+</AnchorPane>

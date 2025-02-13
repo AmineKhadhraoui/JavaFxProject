@@ -122,7 +122,7 @@ public class HomePageController implements Initializable {
 
     @FXML
     public void createEvents(javafx.event.ActionEvent actionEvent) {
-        loadFXML("/org.JavaFxProject.Hotel/events.fxml", events);
+        loadFXML("/org.JavaFxProject.Hotel/Event.fxml", events);
     }
 
     @FXML

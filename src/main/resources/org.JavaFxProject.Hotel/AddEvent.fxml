@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="700.0" prefWidth="450.0"
+            style="-fx-background-color: #DDDDDD;"
+            xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.JavaFxProject.Hotel.Controllers.AddEventController">
+
+    <children>
+        <Label layoutX="114.0" layoutY="80.0" text="New Event" textFill="#2c2c2c">
+            <font>
+                <Font name="System Bold" size="30.0" />
+            </font>
+        </Label>
+
+        <!-- Event Name Field -->
+        <TextField fx:id="eventNameField"
+                   layoutX="108.0" layoutY="150.0"
+                   prefHeight="25.0" prefWidth="250.0"
+                   promptText="Event Name"
+                   style="-fx-focus-color: #2c2c2c; -fx-faint-focus-color: transparent;" />
+        <ImageView fitHeight="24.0" fitWidth="24.0"
+                   layoutX="72.0" layoutY="151.0"
+                   pickOnBounds="true" preserveRatio="true">
+            <!-- Ajoutez une image si besoin -->
+        </ImageView>
+
+        <!-- Event Date Field -->
+        <!-- Remplacez éventuellement ce TextField par un DatePicker -->
+        <TextField fx:id="eventDateField"
+                   layoutX="108.0" layoutY="200.0"
+                   prefHeight="25.0" prefWidth="250.0"
+                   promptText="YYYY-MM-DD"
+                   style="-fx-focus-color: #2c2c2c; -fx-faint-focus-color: transparent;" />
+        <ImageView fitHeight="24.0" fitWidth="24.0"
+                   layoutX="72.0" layoutY="201.0"
+                   pickOnBounds="true" preserveRatio="true">
+            <!-- Ajoutez une image si besoin -->
+        </ImageView>
+
+        <!-- Event Description Field -->
+        <TextField fx:id="eventDescriptionField"
+                   layoutX="108.0" layoutY="250.0"
+                   prefHeight="25.0" prefWidth="250.0"
+                   promptText="Description"
+                   style="-fx-focus-color: #2c2c2c; -fx-faint-focus-color: transparent;" />
+        <ImageView fitHeight="24.0" fitWidth="24.0"
+                   layoutX="72.0" layoutY="251.0"
+                   pickOnBounds="true" preserveRatio="true">
+            <!-- Ajoutez une image si besoin -->
+        </ImageView>
+
+        <!-- Add Button -->
+        <Button fx:id="addButton"
+                layoutX="189.0" layoutY="350.0"
+                mnemonicParsing="false"
+                onAction="#handleAddAction"
+                style="-fx-background-color: #2c2c2c;"
+                text="Add Event"
+                textFill="WHITE" />
+    </children>
+</AnchorPane>
