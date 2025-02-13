@@ -90,7 +90,7 @@ public class BillController implements Initializable {
         if (event.getClickCount() == 2) {
             Bill selectedBill = billTable.getSelectionModel().getSelectedItem();
             if (selectedBill != null) {
-                String path = "C:\\Users\\Mr.Cuong\\IdeaProjects\\HotelManagement\\res\\";
+                String path = "D:\\Bills\\";
                 File file = new File(path + "bill" + selectedBill.getBillID() + ".pdf");
                 if (file.toString().endsWith(".pdf")) {
                     Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + file);
