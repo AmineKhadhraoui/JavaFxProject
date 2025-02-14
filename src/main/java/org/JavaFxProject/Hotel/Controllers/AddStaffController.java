@@ -52,10 +52,18 @@ public class AddStaffController implements Initializable {
         this.staffList = staffList;
     }
 
+
+    private boolean isValidEmail(String email) {
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+        return email.matches(emailRegex);
+    }
+
     @FXML
     public void handleAddAction(javafx.event.ActionEvent actionEvent) {
-        if (staffName.getText().isEmpty() || staffAge.getText().isEmpty() || staffGender.getText().isEmpty()
-                || staffPosition.getText().isEmpty() || staffPhone.getText().isEmpty() || staffEmail.getText().isEmpty()) {
+        if (staffName.getText().isEmpty() || staffAge.getText().isEmpty() ||
+                staffGender.getText().isEmpty() || staffPosition.getText().isEmpty() ||
+                staffPhone.getText().isEmpty() || staffEmail.getText().isEmpty()) {
+            System.out.println("Tous les champs doivent être remplis !");
             return;
         }
 
@@ -66,9 +74,15 @@ public class AddStaffController implements Initializable {
         String phone = staffPhone.getText();
         String email = staffEmail.getText();
 
+        if (!isValidEmail(email)) {
+            System.out.println("Adresse e-mail invalide !");
+            return;
+        }
+
         try {
             age = Integer.parseInt(staffAge.getText());
         } catch (NumberFormatException e) {
+            System.out.println("L'âge doit être un nombre !");
             return;
         }
 
