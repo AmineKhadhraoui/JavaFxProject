@@ -1,7 +1,9 @@
 package org.JavaFxProject.Hotel.Services;
 
 import org.JavaFxProject.Hotel.Entities.Event;
+import org.JavaFxProject.Hotel.Entities.User;
 import org.JavaFxProject.Hotel.Utils.DBConnection;
+import org.JavaFxProject.Hotel.Utils.EmailUtil;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -9,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,6 +37,10 @@ public class EventService {
             pst.setString(3, event.getEventDescription());
 
             pst.executeUpdate();
+            this.notifyAllUsersAboutEvent(
+                    event.getEventName(),
+                    event.getEventDate(),
+                    event.getEventDescription());
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -120,4 +127,53 @@ public class EventService {
         }
         return searchResults;
     }
+    public List<User> getAllUsers() {
+        List<User> userList = new ArrayList<>();
+        String sql = "SELECT * FROM users"; // Assurez-vous que votre table s'appelle bien 'users'
+        try (PreparedStatement pst = connection.prepareStatement(sql);
+             ResultSet rs = pst.executeQuery()) {
+
+            while (rs.next()) {
+                // Selon les colonnes de votre table 'users'
+                // Adaptez si la colonne email s'appelle 'email' ou 'address'
+                User user = new User(
+                        rs.getString("name"),
+                        rs.getString("username"),
+                        rs.getString("password"),
+                        rs.getString("gender"),
+                        rs.getString("securityQuestion"),
+                        rs.getString("answer"),
+                        rs.getString("address") // ou rs.getString("email")
+                );
+                userList.add(user);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return userList;
+    }
+
+    public void notifyAllUsersAboutEvent(String eventName, LocalDate eventDate, String eventDescription) {
+        // 1) Récupérer tous les utilisateurs
+        List<User> allUsers = this.getAllUsers();
+
+        // 2) Construire l’objet e-mail en français
+        String subject = "Nouvel événement : " + eventName;
+        String body = "Bonjour,\n\n"
+                + "Nous avons le plaisir de vous annoncer un nouvel événement :\n\n"
+                + "Nom : " + eventName + "\n"
+                + "Date : " + eventDate + "\n"
+                + "Description : " + eventDescription + "\n\n"
+                + "Nous espérons vous y voir nombreux !\n\n"
+                + "Cordialement,\n"
+                + "L'équipe de l'hôtel";
+
+        // 3) Envoyer un email à chaque utilisateur
+        for (User user : allUsers) {
+            // Selon votre implémentation, remplacez user.getAddress() par user.getEmail() si nécessaire
+            EmailUtil.sendEmail(user.getAddress(), subject, body);
+        }
+    }
+
+
 }
